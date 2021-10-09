@@ -1,7 +1,7 @@
 class Solution:
     #Function to add two numbers represented by linked list.
     def addTwoLists(self, first, second):
-        def reverse(head):
+        def reverse1(head):
             pre=None
             nex=None
             while head!=None:
@@ -11,8 +11,8 @@ class Solution:
                 head=nex
             return pre
         
-        first=reverse(first)
-        second=reverse(second)
+        first=reverse1(first)
+        second=reverse1(second)
         dummy=Node(0)
         temp=dummy
         carry=0
@@ -32,4 +32,4 @@ class Solution:
             temp.next=Node(addition)    
             temp=temp.next
             
-        return reverse(dummy.next)
+        return reverse1(dummy.next)
