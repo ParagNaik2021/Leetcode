@@ -1,7 +1,5 @@
 class Solution:
-    #Function to return a list of nodes visible from the top view 
-    #from left to right in Binary Tree.
-    def topView(self,root):
+    def bottomView(self, root):
         dic = {}
         view=[]
         if not root:
@@ -11,8 +9,7 @@ class Solution:
             cur = q.popleft()
             line=cur[1]
             node=cur[0]
-            if line not in dic:
-                dic[line] = node.data    
+            dic[line] = node.data    
             if node.left:
                 q.append((node.left, line - 1))
             if node.right:
