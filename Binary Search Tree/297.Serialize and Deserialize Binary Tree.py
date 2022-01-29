@@ -23,5 +23,6 @@ class Codec:
             return node
         
         val=iter(data.split())
+        #print([val1 for val1 in val])   #output--->['1', '2', 'x', 'x', '3', '4', 'x', 'x', '5', 'x', 'x']
         return deserial()
         
