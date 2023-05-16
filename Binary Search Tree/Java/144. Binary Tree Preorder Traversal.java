@@ -18,3 +18,21 @@ class Solution {
         return preorder;
     }
 }
+
+***********************************PreOrder Traversal-->Iterative Approach*******************************************
+
+class Solution {
+   public List < Integer > preorderTraversal(TreeNode root) {
+      List < Integer > preorder = new ArrayList < > ();
+      Stack < TreeNode > st = new Stack < > ();
+      if (root == null) return preorder;
+      st.push(root);
+      while (!st.empty()) {
+         root = st.pop();
+         preorder.add(root.val);
+         if (root.right != null) st.push(root.right);
+         if (root.left != null) st.push(root.left);
+      }
+      return preorder;
+   }
+}
