@@ -1,6 +1,24 @@
 **********************************Recurssion- Unique Path but time limit exceed *****************************************
 //Recurrssion
+class Solution {
 
+   public static int f(int m, int n, int[][] grid) {
+      if (m == 0 && n == 0) return grid[m][n];
+      if (m < 0 || n < 0) return (int) Math.pow(10, 9);
+
+      int up = grid[m][n] + f(m - 1, n, grid);
+      int left = grid[m][n] + f(m, n - 1, grid);
+
+      return Math.min(left, up);
+   }
+
+   public int minPathSum(int[][] grid) {
+      int m = grid.length;
+      int n = grid[0].length;
+
+      return f(m - 1, n - 1, grid);
+   }
+}
 
 ****************************Memoization approach***************************************************
 //Memoization
