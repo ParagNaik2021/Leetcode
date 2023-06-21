@@ -71,7 +71,53 @@ public class Solution {
 
 ***************************************Tabulation approach****************************************
 //Tabulation
-
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int minimumPathSum(int[][] triangle, int n) {
+        // Write your code here.
+        
+        int[][] dp=new int[n][n];
+        for(int j=0;j<n;j++) dp[n-1][j]=triangle[n-1][j];
+        //we will start from bottom and end at top
+        for(int i=n-2;i>=0;i--)
+        {
+            for(int j=i;j>=0;j--)
+            {
+                int down = triangle[i][j]+dp[i+1][j];
+                int diagonal = triangle[i][j]+dp[i+1][j+1];
+            
+                 dp[i][j] = Math.min(down, diagonal);
+            }
+        }
+        return dp[0][0];
+    }
+}
 
 ***************************************Space optimization approach****************************************
 //Space optimization
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int minimumPathSum(int[][] triangle, int n) {
+        // Write your code here.
+      int[] front =new int[n];
+      for(int j=0;j<n;j++)
+      {
+        front[j]=triangle[n-1][j];
+      }
+      for(int i=n-2;i>=0;i--)
+      {
+        int[] curr=new int[n];
+        for(int j=i;j>=0;j--)
+        {
+          int down=triangle[i][j]+front[j];
+          int diagonal=triangle[i][j]+front[j+1];
+          curr[j]=Math.min(down,diagonal);
+        }
+        front=curr;
+      }
+      return front[0];
+        
+    }
+}
