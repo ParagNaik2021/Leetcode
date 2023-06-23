@@ -109,3 +109,37 @@ public class Solution {
 
 ***************************************Space optimization approach****************************************
 //Space optimization
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+   
+    public static boolean subsetSumToK(int n, int k, int arr[]){
+        // Write your code here.
+        boolean[] prev=new boolean[k+1];
+       
+        prev[0]=true;
+        
+       if(arr[0]<=k)
+        prev[arr[0]] = true; 
+        for(int index=1;index<n;index++)
+        {
+            boolean[] curr=new boolean[k+1];
+            curr[0]=true;
+            for(int target=1;target<=k;target++)
+            {
+                boolean nottake=prev[target];
+                boolean take=false;
+
+                if(arr[index]<=target) take=prev[target-arr[index]];
+                
+                if(nottake==true || take==true)
+                    curr[target]=true;
+                else
+                    curr[target]=false;
+            }
+            prev=curr;
+        }
+        return prev[k];
+    }
+}
+
