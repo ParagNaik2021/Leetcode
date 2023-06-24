@@ -167,21 +167,21 @@ public class Solution {
 				for(int j2=0;j2<m;j2++)
 				{
 					int maxi=(int) Math.pow(-10,9);
-		for(int dj1=-1;dj1<=+1;dj1++)
-		{
-			for(int dj2=-1;dj2<=+1;dj2++)
-			{
-				int value=0;
-				if(j1==j2) value=grid[i][j1];
-				else value=grid[i][j1]+grid[i][j2];
-				if(j1+dj1>=0 && j1+dj1<m && j2+dj2>=0 && j2+dj2<m) value+=front[j1+dj1][j2+dj2];
-				else value+=(int) Math.pow(-10,9);
-				maxi=Math.max(maxi,value);
+					for(int dj1=-1;dj1<=+1;dj1++)
+					{
+						for(int dj2=-1;dj2<=+1;dj2++)
+						{
+							int value=0;
+							if(j1==j2) value=grid[i][j1];
+							else value=grid[i][j1]+grid[i][j2];
+							if(j1+dj1>=0 && j1+dj1<m && j2+dj2>=0 && j2+dj2<m) value+=front[j1+dj1][j2+dj2];
+							else value+=(int) Math.pow(-10,9);
+							maxi=Math.max(maxi,value);
 
-			}
-		}
+						}
+					}
 
-		 curr[j1][j2]=maxi;
+		 			curr[j1][j2]=maxi;
 				}
 			}
 			 for (int a = 0; a < m; a++) {
