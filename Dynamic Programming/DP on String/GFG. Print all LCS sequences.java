@@ -65,3 +65,52 @@ class Solution
         return res;
     }
 }
+
+
+
+**********************************Striver Problem to print the longest LCS *****************************************
+public class Solution {
+    public static String findLCS(int n, int m, String s1, String s2){
+        // Write your code here.
+        int[][] dp=new int[n+1][m+1];
+        for(int i=0;i<=n;i++) dp[i][0]=0;
+        for(int i=0;i<=m;i++) dp[0][i]=0;
+
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=m;j++)
+            {
+                if(s1.charAt(i-1)==s2.charAt(j-1)) dp[i][j]=1+dp[i-1][j-1];
+                else Math.max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+        int lcs=dp[n][m];
+        int i=n;
+        int j=m;
+
+        int index=lcs-1;
+        String str="";
+        for(int k=1;k<=lcs;k++) str+="$";
+
+       StringBuilder ss=new StringBuilder(s1);
+        StringBuilder str2=new StringBuilder(str);
+        while(i>0 && j>0)
+        {
+            if(s1.charAt(i-1)==s2.charAt(j-1))
+            {
+                str2.setCharAt(index,ss.charAt(i-1));
+                index--;
+                i--;
+                j--;
+
+            }
+            else if(s1.charAt(i-1)>s2.charAt(j-1))
+            {
+                i--;
+            }
+            else j--;
+        }
+
+        return str2.toString();
+    }
+}
