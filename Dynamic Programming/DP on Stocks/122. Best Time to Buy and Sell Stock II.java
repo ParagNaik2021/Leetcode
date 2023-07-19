@@ -113,3 +113,26 @@ class Solution {
         return ahead[1];
     }
 }
+
+
+***************************************Variable approach****************************************
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        int aheadNotBuy=0;
+        int aheadBuy=0;
+        int currBuy=0;
+        int currNotBuy=0;
+        int n=prices.length;
+        for(int ind=n-1;ind>=0;ind--)
+        {
+            currNotBuy=Math.max((prices[ind]+aheadBuy),(0+aheadNotBuy));
+
+            currBuy=Math.max((-prices[ind]+aheadNotBuy),(0+aheadBuy));
+
+            aheadBuy=currBuy;
+            aheadNotBuy=currNotBuy;
+        }
+        return aheadBuy;
+    }
+}
