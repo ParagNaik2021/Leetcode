@@ -1,3 +1,4 @@
+####################################Optimal approach#########################################################
 class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
 
@@ -21,3 +22,6 @@ class Solution {
         
     }
 }
+
+
+Note-There is no brute or better apprach so move directly to optimal solution
