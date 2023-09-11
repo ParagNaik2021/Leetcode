@@ -1,3 +1,4 @@
+###################################Better Approach#########################################################
 Variety 1- If we need to return index of the element which add up to target
 Below is the better and optimal approach for this variety
 
@@ -25,8 +26,7 @@ class Solution {
     }
 }
 
-
-
+###################################Better Approach#########################################################
 Variety 2- We need to return "Yes or No" if the target is achieved. The problem is on coding ninja
 Link-https://www.codingninjas.com/codestudio/problems/reading_6845742?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems&leftPanelTab=1
 
