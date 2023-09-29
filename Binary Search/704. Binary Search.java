@@ -20,5 +20,21 @@ class Solution {
 }
 
 ****************************Recurssive approach***************************************************
-//Recurrssion-Leetcode
+//Recursion-Leetcode
 
+class Solution {
+    int bs(int[] arr,int low,int high,int target){
+        //base case
+        if(low>high) return -1;
+
+        int mid=(low+high)/2;
+        if(arr[mid]==target) return mid;
+        else if(target>arr[mid]) return bs(arr,mid+1,high,target);
+
+        return bs(arr,0,mid-1,target);
+
+    }
+    public int search(int[] nums, int target) {
+        return bs(nums,0,nums.length-1,target);
+    }
+}
