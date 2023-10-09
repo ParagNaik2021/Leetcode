@@ -51,3 +51,9 @@ public class Solution {
         return ans[1];
            }
 } 
+
+Note:-
+Time Complexity: O(logN), where N = size of the given array.
+Reason: We are basically using the Binary Search algorithm.
+
+Space Complexity: O(1) as we are using no extra space.

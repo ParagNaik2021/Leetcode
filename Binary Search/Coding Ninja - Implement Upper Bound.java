@@ -1,4 +1,4 @@
-**********************************Binary Search*****************************************
+**********************************Binary Search- Implement Upper Bound*****************************************
 public class Solution {
     public static int upperBound(int []arr, int x, int n){
         // Write your code here.
@@ -18,3 +18,8 @@ public class Solution {
         return ans;
     }
 }
+
+Note:-
+Time Complexity: O(logN), where N = size of the given array.
+Reason: We are basically using the Binary Search algorithm.
+Space Complexity: O(1) as we are using no extra space.
