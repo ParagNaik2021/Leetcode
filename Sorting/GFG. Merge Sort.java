@@ -23,7 +23,7 @@ class Solution {
 
       while (right <= r) {
          temp.add(arr[right]);
-         right++;
+         right++; 
 
       }
       for (int i = l; i <= r; i++) {
