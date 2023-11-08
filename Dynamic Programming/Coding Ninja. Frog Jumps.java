@@ -19,7 +19,6 @@ public class Solution {
 }
 
 
-
 ****************************Memoization approach***************************************************
 import java.util.* ;
 import java.io.*; 
@@ -49,9 +48,30 @@ public class Solution {
     }
 }
 
-
-
 ***************************************Tabulation approach****************************************
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int frogJump(int n, int heights[]) {
+
+        // Write your code here..
+        int[] dp=new int[n+1];
+        Arrays.fill(dp,-1);
+        dp[0]=0;
+        for(int i=1;i<n;i++){
+            int first_step=dp[i-1]+Math.abs(heights[i]-heights[i-1]);
+            int second_step=Integer.MAX_VALUE;
+            if(i>1){
+            second_step=dp[i-2]+Math.abs(heights[i]-heights[i-2]);
+            }
+            dp[i]=Math.min(first_step,second_step);
+        }
+        return dp[n-1];
+    }
+
+}
+
+***************************************Space approach****************************************
 
 import java.util.* ;
 import java.io.*; 
